@@ -1,0 +1,24 @@
+<div class="card">
+
+    <div class="card-header">
+        <h2>{{title}}</h2> 
+    </div>     
+        <div class="card-body">
+            <form class="form" #userForm="ngForm" (ngSubmit) = "login()">
+                <div class="form-group">
+                    <label for="email">Email</label><br>
+                    <input type="email" required #email="ngModel" ngModel name="email" /><br>
+                    <span *ngIf="email.invalid && email.touched" class="error">Email is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label><br>
+                    <input type="password" required #password="ngModel" ngModel name="password" /><br>
+                    <span *ngIf="password.invalid && password.touched" class="error">Password is required</span>
+                    
+                </div>
+             
+                <button type="submit" [disabled] = "userForm.invalid"  class="btn btn-success float-right">Login</button>
+            </form>
+
+        </div>
+</div>

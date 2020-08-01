@@ -1,0 +1,50 @@
+<div class="card">
+    <form #newProductForm = "ngForm" (ngSubmit) = "UpdateProduct()">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Product Id</label></td>
+                            <td><input type="text" name="p_id" [(ngModel)]="product.productId" value="{{product.productId}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Name</label></td>
+                            <td><input type="text" name="p_name" [(ngModel)]="product.productName" value="{{product.productName}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Code</label></td>
+                            <td><input type="text" name="p_code" [(ngModel)]="product.productCode" value="{{product.productCode}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Releas Date</label></td>
+                            <td><input type="text" name="p_date" [(ngModel)]="product.releaseDate" value="{{product.releaseDate}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Description</label></td>
+                            <td><input type="text" name="p_dis" [(ngModel)]="product.description" value="{{product.description}}"/></td>
+                        <tr>
+                            <td><label>Price</label></td>
+                            <td><input type="text" name="p_pricee" [(ngModel)]="product.price" value="{{product.price}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Star Rating</label></td>
+                            <td><input type="text" name="p_star" [(ngModel)]="product.starRating" value="{{product.starRating}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Image Url</label></td>
+                            <td><input type="text" name="p_image" [(ngModel)]="product.imageUrl" value="{{product.imageUrl}}"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Update"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

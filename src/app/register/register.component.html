@@ -1,0 +1,42 @@
+<div class="card">
+    
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <form class="form" #userForm = "ngForm"  (ngSubmit) = "NewReg()">
+            <div class="form-group float-center">
+                <label for="name">Name</label><br>
+                <input type="text" required #name="ngModel" pattern = "[a-zA-Z]*" name="name" [(ngModel)]="registeredUser.name" /><br>
+                <span *ngIf = "name.invalide && name.touch" class="error">Name  required</span>
+                  
+            </div>
+            <div class="form-group float-center">
+                <label for="place">Place</label><br>
+                <input type="text" required #palce="ngModel" name="place" [(ngModel)]="registeredUser.place" /><br>
+                <span *ngIf = "palce.invalide && palce.touch" class="error">Place  required</span>
+                    
+            </div>
+            <div class="form-group float-center">
+                <label for="email">Email</label><br>
+                <input type="email" required #email="ngModel" name="email" [(ngModel)]="registeredUser.email" /><br>
+                <span *ngIf = "email.invalide && email.touch" class="error">Email  required</span>
+                
+            </div>
+            <div class="form-group float-center">
+                <label for="number">Phone Number</label><br>
+                <input type="number" required #phone="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$" name="phone" [(ngModel)]="registeredUser.phone" /><br>
+                <span *ngIf = "phone.invalide && phone.touch" class="error">Phone number  required</span>
+                    
+            </div>
+            <div class="form-group float-center">
+                <label for="email">Password</label><br>
+                <input type="password" required minlength="6" #password="ngModel" name="password" [(ngModel)]="registeredUser.password"/><br>
+                <span *ngIf = "password.invalide && password.touch" class="error">Password required(Minimum 6 characters)</span>
+                
+            </div>
+            <button type="submit" [disabled] = "userForm.invalid" class="btn btn-success float-center">Register</button>
+        </form>
+    </div>
+</div>
+

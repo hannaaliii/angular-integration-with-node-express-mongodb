@@ -1,0 +1,51 @@
+<div class="card">
+    <form (ngSubmit) = "AddProduct()" #addForm="ngForm">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Product Id</label></td>
+                            <td><input type="text" required #productId="ngModel" ngModel name="p_id" [(ngModel)]="productItem.productId"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Name</label></td>
+                            <td><input type="text" required #name="ngModel" ngModel name="p_name" [(ngModel)]="productItem.productName"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Product Code</label></td>
+                            <td><input type="text" required #code="ngModel" ngModel name="p_code" [(ngModel)]="productItem.productCode"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Releas Date</label></td>
+                            <td><input type="text" required #date="ngModel" ngModel name="p_date" [(ngModel)]="productItem.releaseDate"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Description</label></td>
+                            <td><input type="text" required #description="ngModel" ngModel name="p_dis" [(ngModel)]="productItem.description"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Price</label></td>
+                            <td><input type="text" required #price="ngModel" ngModel name="p_pricee" [(ngModel)]="productItem.price"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Star Rating</label></td>
+                            <td><input type="text" required #rating="ngModel" ngModel name="p_star" [(ngModel)]="productItem.starRating"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Image Url</label></td>
+                            <td><input type="text" required #image="ngModel" ngModel name="p_image" [(ngModel)]="productItem.imageUrl"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" class="btn btn-success" [disabled] = "addForm.invalid" value="Submit"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
